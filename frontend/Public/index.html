@@ -9,6 +9,14 @@
       href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
+    <script>
+      const redirect = sessionStorage.redirect;
+      delete sessionStorage.redirect;
+      if (redirect && redirect !== location.href) {
+        history.replaceState(null, null, redirect);
+      }
+    </script>
+    
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
